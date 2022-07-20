@@ -8,8 +8,7 @@ use App\Models\TypeModel;
 class MarketController extends BaseController
 {
     public function add()
-    {        checkLogin();
-
+    {
         $session = session();
         $request = $_POST;
         $request['user'] = $session->email;
@@ -26,7 +25,7 @@ class MarketController extends BaseController
 
     public function delete($id)
     {
-        checkLogin();
+
 
         $market = new MarketModel();
         if ($market->deleteMarket($id) == '') {

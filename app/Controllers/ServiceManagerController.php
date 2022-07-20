@@ -10,7 +10,6 @@ class ServiceManagerController extends BaseController
 {
     public function index()
     {
-        checkLogin();
 
         $session = session();
         if ($session->getFlashdata('message') !== null) {

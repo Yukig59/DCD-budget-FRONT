@@ -9,7 +9,7 @@ use App\Models\TypeModel;
 class FournisseurController extends BaseController
 {
     public function add()
-    {        checkLogin();
+    {
 
         $session = session();
         $request = $_POST;
@@ -25,7 +25,7 @@ class FournisseurController extends BaseController
     }
 
     public function delete($id)
-    {        checkLogin();
+    {
 
         $fournisseur = new FournisseurModel();
         if ($fournisseur->deleteFournisseur($id) == '') {

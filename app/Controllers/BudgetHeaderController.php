@@ -3,14 +3,15 @@
 namespace App\Controllers;
 
 use App\Models\BudgetHeaderModel;
+use App\Models\TypeModel;
 
 class BudgetHeaderController extends BaseController
 {
 
     public function index()
-    {$session = session();
-        checkLogin($session);
-        var_dump(checkLogin($session));
+    {
+        $session = session();
+
 
         if ($session->getFlashdata('message') !== null) {
             $data['message'] = $session->getFlashdata('message');
@@ -27,28 +28,33 @@ class BudgetHeaderController extends BaseController
 
     public function show($bhId)
     {
-        checkLogin();
 
 
     }
 
     public function add()
     {
-        checkLogin();
+
 
         $session = session();
         $request = $_POST;
+        $type = new TypeModel();
+        $request['serviceIri'] = "/api/services/" . $session->serviceId;
+        $request['typeIri'] = "/api/types/" . $type->getTypeByLabel($request['type'])[0]->id;
         $request['code'] = $session->service;
         $request['user'] = $session->email;
 
         $bh = new BudgetHeaderModel();
-        $result = ($bh->addBudgetHeader($request));
-        var_dump($result);
+       if ($bh->addBudgetHeader($request)){
+           return redirect()->to('/budget-headers')->with('message', 'Ligne de budget créée avec succes !');
+       } else {
+           return redirect()->to('/budget-headers')->with('message', 'Une erreur s\'est produite, veuillez réessayer');
+       }
+
     }
 
     public function delete($id)
     {
-        checkLogin();
 
 
         $bh = new BudgetHeaderModel();

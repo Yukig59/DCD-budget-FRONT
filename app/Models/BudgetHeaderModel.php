@@ -42,12 +42,8 @@ class BudgetHeaderModel extends AbstractModel
             "dateCreation" => $date,
             "budgetReel" => $br,
             "depenses" => $depenses,
-            "service" => [
-                "code" => $data['code']
-            ],
-            "type" => [
-                "label" => $type
-            ]
+            "service" => $data['serviceIri'],
+            "type" => $data['typeIri']
 
         ];
         return $this->sendData($postData, self::URL);
