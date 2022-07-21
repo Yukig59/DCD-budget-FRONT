@@ -17,6 +17,7 @@ class FournisseurController extends BaseController
         $request['user'] = $session->email;
         $fournisseur = new FournisseurModel();
         $request['serviceIri'] = "/api/services/" . $session->serviceId;
+       
         if ($fournisseur->addFournisseur($request)) {
             return redirect()->to('/gestion-service')->with('message', 'Fournisseur créé avec succes !');
         } else {

@@ -23,7 +23,6 @@ class ServiceManagerController extends BaseController
         $users = $user->getUsers($session->service);
         $fournisseur = new FournisseurModel();
         $fournisseurs = $fournisseur->getFournisseurs($session->service);
-        var_dump($fournisseurs);
         $data = [
             'message' => $message,
             'markets' => $markets,
