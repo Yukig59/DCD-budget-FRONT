@@ -16,7 +16,7 @@
                     <div class="field ">
                         <label for="label" class="label">Label</label>
                         <div class="control has-icons-left">
-                            <input type="text" class="input" id="label" name="label"
+                            <input type="text" class="input is-rounded" id="label" name="label"
                                    placeholder="MAINTENANCE EQUIPEMENTS">
                             <span class="icon is-small is-left">
                     <i class="fas fa-edit"></i>
@@ -132,7 +132,7 @@
                             </div>
                         </div>
                         <footer class="card-footer">
-                            <a href="{{ path('show_bh', {'codeLigne': item.bhNumeroLigne }) }}"
+                            <a href="<?= base_url("budget-header/" . $bh->id) ?>"
                                class="card-footer-item"><i class="fa fa-info-circle"></i>&nbsp;
                                 Détails</a>
                             <a href="#" class="card-footer-item"><i class="fa fa-pie-chart"></i>&nbsp; Stats</a>

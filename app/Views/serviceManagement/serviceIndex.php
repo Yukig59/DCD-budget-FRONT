@@ -253,6 +253,7 @@ use CodeIgniter\I18n\Time;
         </script>
     </div>
     <div id="user" style="display: none">
+
         <div class="columns is-centered is-flex-wrap-wrap ml-2 mr-2">
             <?php foreach ($users as $user) { ?>
                 <div class="column is-one-fifth">
@@ -270,7 +271,6 @@ use CodeIgniter\I18n\Time;
                                         <p>Email : <a href="mailto://<?= $user->email ?>"
                                                       title="Envoyer un mail à <?= $user->email ?>"><?= $user->email ?></a>
                                         </p>
-
                                     </div>
                                 </div>
                                 <br>Créé
@@ -278,10 +278,8 @@ use CodeIgniter\I18n\Time;
                             </div>
                         </div>
                         <footer class="card-footer">
-                            <a href="#"
-                               class="card-footer-item"><i class="fa fa-info-circle"></i>&nbsp;
-                                Détails</a>
-                            <a href="#" class="card-footer-item"><i
+                            <a onclick="return confirm('Vous êtes sur le point de supprimer cet utilisateur. Êtes-vous sur ?')"
+                                href="<?= base_url("/user/delete/" . $user->id) ?>" class="card-footer-item "><i
                                         class="fa fa-trash-alt"></i>&nbsp;
                                 Révoquer l'acces à l'application</a>
                         </footer>
@@ -289,6 +287,7 @@ use CodeIgniter\I18n\Time;
                 </div>
             <?php } ?>
         </div>
+
     </div>
     <div id="fournisseur" style="display: none">
         <div class="columns is-centered ">
@@ -362,7 +361,7 @@ use CodeIgniter\I18n\Time;
                                     </div>
                                 </div>
                                 <div class="field">
-                                    <label for="city" class="label"></label>
+                                    <label for="city" class="label">Ville</label>
                                     <div class="control has-icons-left">
                                         <input type="text" name="city" id="city" placeholder="Le Havre"
                                                class="input is-rounded is-fullwidth">
@@ -372,9 +371,10 @@ use CodeIgniter\I18n\Time;
                                     </div>
                                 </div>
                                 <div class="field">
-                                    <label for="telephone" class="label"></label>
+                                    <label for="telephone" class="label">Telephone</label>
                                     <div class="control has-icons-left">
-                                        <input type="text" name="telephone" id="telephone" class="input is-rounded is-fullwidth"
+                                        <input type="text" name="telephone" id="telephone"
+                                               class="input is-rounded is-fullwidth"
                                                placeholder="0254653214">
                                         <span class="icon is-small is-left">
                                 <i class="fas fa-phone-alt"></i>
@@ -388,109 +388,109 @@ use CodeIgniter\I18n\Time;
                 </div>
             </div>
         </div>
-    </div>
-
-            <?php if ($fournisseurs != null) { ?>
-                <div class="columns is-centered is-flex-wrap-wrap ml-2 mr-2">
-                    <?php foreach ($fournisseurs as $fournisseur) { ?>
-                        <div class="column is-one-fifth">
-                            <div class="card">
-                                <header class="card-header">
-                                    <p class="card-header-title">
-                                        <?= $fournisseur->raisonSociale ?>
-                                    </p>
-                                    <small>Numéro de siret: <?= $fournisseur->siret ?></small>
-                                    <button class="card-header-icon" aria-label="more options">
-                                    </button>
-                                </header>
-                                <div class="card-content">
-                                    <div class="content">
-                                        <div class="columns is-centered has-text-centered">
-                                            <div class="column">
-                                                <i class="fa fa-map-location-dot"></i> <?= $fournisseur->addressLine1 ?>
-                                                <br>
-                                                <?= $fournisseur->addressLine2 ?? '' ?><br>
-                                                <?= $fournisseur->zipCode ?><br>
-                                                <?= $fournisseur->city ?><br>
-                                            </div>
-                                            <div class="column">
-                                                <i class="fa fa-phone-alt"></i>&nbsp;<?= $fournisseur->telephone ?>
-                                            </div>
+        <?php if ($fournisseurs != null) { ?>
+            <div class="columns is-centered is-flex-wrap-wrap ml-2 mr-2">
+                <?php foreach ($fournisseurs as $fournisseur) { ?>
+                    <div class="column is-one-fifth">
+                        <div class="card">
+                            <header class="card-header">
+                                <p class="card-header-title">
+                                    <?= $fournisseur->raisonSociale ?>
+                                </p>
+                                <small>Numéro de siret: <?= $fournisseur->siret ?></small>
+                                <button class="card-header-icon" aria-label="more options">
+                                </button>
+                            </header>
+                            <div class="card-content">
+                                <div class="content">
+                                    <div class="columns is-centered has-text-centered">
+                                        <div class="column">
+                                            <i class="fa fa-map-location-dot"></i> <?= $fournisseur->addressLine1 ?>
+                                            <br>
+                                            <?= $fournisseur->addressLine2 ?? '' ?><br>
+                                            <?= $fournisseur->zipCode ?><br>
+                                            <?= $fournisseur->city ?><br>
+                                        </div>
+                                        <div class="column">
+                                            <i class="fa fa-phone-alt"></i>&nbsp;<?= $fournisseur->telephone ?>
                                         </div>
                                     </div>
                                 </div>
-                                <footer class="card-footer">
-                                    <a href="{{ path('show_fournisseur', {'fournisseurId':f.fournisseurId }) }}"
-                                       class="card-footer-item"><i class="fa fa-info-circle"></i>&nbsp;
-                                        Détails</a>
-                                    <a href="<?= base_url("/fournisseur/delete/" . $fournisseur->id) ?>"
-                                       onclick="return confirm('Vous êtes sur le point de supprimer ce fournisseur. Êtes-vous sur ?')"
-                                       class="card-footer-item"><i
-                                                class="fa fa-trash-alt"></i>&nbsp;
-                                        Supprimer</a>
-                                </footer>
                             </div>
+                            <footer class="card-footer">
+                                <a href="{{ path('show_fournisseur', {'fournisseurId':f.fournisseurId }) }}"
+                                   class="card-footer-item"><i class="fa fa-info-circle"></i>&nbsp;
+                                    Détails</a>
+                                <a href="<?= base_url("/fournisseur/delete/" . $fournisseur->id) ?>"
+                                   onclick="return confirm('Vous êtes sur le point de supprimer ce fournisseur. Êtes-vous sur ?')"
+                                   class="card-footer-item"><i
+                                            class="fa fa-trash-alt"></i>&nbsp;
+                                    Supprimer</a>
+                            </footer>
                         </div>
+                    </div>
 
-                    <?php } ?>
-                </div>
-            <?php } else { ?>
-                <div class="columns is-centered">
-                    <p>Aucun fournisseur trouvée</p>
-                </div>
-            <?php } ?>
+                <?php } ?>
+            </div>
+        <?php } else { ?>
+            <div class="columns is-centered">
+                <p>Aucun fournisseur trouvée</p>
+            </div>
+        <?php } ?>
 
-            <script>
-                document.addEventListener('DOMContentLoaded', () => {
-                    // Functions to open and close a modal
-                    function openModal($el) {
-                        $el.classList.add('is-active');
-                    }
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                // Functions to open and close a modal
+                function openModal($el) {
+                    $el.classList.add('is-active');
+                }
 
-                    function closeModal($el) {
-                        $el.classList.remove('is-active');
-                    }
+                function closeModal($el) {
+                    $el.classList.remove('is-active');
+                }
 
-                    function closeAllModals() {
-                        (document.querySelectorAll('.modal') || []).forEach(($modal) => {
-                            closeModal($modal);
-                        });
-                    }
-
-                    // Add a click event on buttons to open a specific modal
-                    (document.querySelectorAll('.modal-js-add-fourn') || []).forEach(($trigger) => {
-                        const modal = $trigger.dataset.target;
-                        const $target = document.getElementById(modal);
-                        console.log($target);
-                        $trigger.addEventListener('click', () => {
-                            openModal($target);
-                        });
+                function closeAllModals() {
+                    (document.querySelectorAll('.modal') || []).forEach(($modal) => {
+                        closeModal($modal);
                     });
-                    // Add a click event on various child elements to close the parent modal
-                    (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
-                        const $target = $close.closest('.modal');
-                        $close.addEventListener('click', () => {
-                            closeModal($target);
-                        });
-                    });
-                    // Add a keyboard event to close all modals
-                    document.addEventListener('keydown', (event) => {
-                        const e = event || window.event;
-                        if (e.keyCode === 27) { // Escape key
-                            closeAllModals();
-                        }
+                }
+
+                // Add a click event on buttons to open a specific modal
+                (document.querySelectorAll('.modal-js-add-fourn') || []).forEach(($trigger) => {
+                    const modal = $trigger.dataset.target;
+                    const $target = document.getElementById(modal);
+                    console.log($target);
+                    $trigger.addEventListener('click', () => {
+                        openModal($target);
                     });
                 });
-                document.addEventListener('DOMContentLoaded', () => {
-                    (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
-                        const $notification = $delete.parentNode;
-                        $delete.addEventListener('click', () => {
-                            $notification.parentNode.removeChild($notification);
-                        });
+                // Add a click event on various child elements to close the parent modal
+                (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+                    const $target = $close.closest('.modal');
+                    $close.addEventListener('click', () => {
+                        closeModal($target);
                     });
                 });
-            </script>
-        </div>
+                // Add a keyboard event to close all modals
+                document.addEventListener('keydown', (event) => {
+                    const e = event || window.event;
+                    if (e.keyCode === 27) { // Escape key
+                        closeAllModals();
+                    }
+                });
+            });
+            document.addEventListener('DOMContentLoaded', () => {
+                (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+                    const $notification = $delete.parentNode;
+                    $delete.addEventListener('click', () => {
+                        $notification.parentNode.removeChild($notification);
+                    });
+                });
+            });
+        </script>
+    </div>
+    </div>
+
 
 </section>
 

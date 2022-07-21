@@ -16,6 +16,7 @@ class MarketController extends BaseController
         $type = new TypeModel();
         $request['serviceIri'] = "/api/services/" . $session->serviceId;
         $request['typeIri'] = "/api/types/" . $type->getTypeByLabel($request['typologie'])[0]->id;
+
         if ($marche->addMarket($request)) {
             return redirect()->to('/gestion-service')->with('message', 'Marché créé avec succes !');
         } else {

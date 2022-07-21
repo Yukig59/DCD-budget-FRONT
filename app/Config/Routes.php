@@ -4,6 +4,7 @@ namespace Config;
 
 // Create a new instance of our RouteCollection class.
 use App\Controllers\AuthController;
+use App\Controllers\BudgetHeaderController;
 use App\Controllers\FournisseurController;
 use App\Controllers\MarketController;
 use App\Controllers\ServiceManagerController;
@@ -48,8 +49,11 @@ $routes->get('/', "AuthController::checkLogin");
 $routes->get('/login', 'AuthController::index');
 $routes->post('/login', 'AuthController::login');
 $routes->get('/logout', "AuthController::logout");
+$routes->post('/logout', "AuthController::logout");
+$routes->get('/user/delete/(:num)', "AuthController::delete/$1");
 // REGISTER
-
+$routes->get('/register',"AuthController::register");
+$routes->post('/register',"AuthController::register");
 //DASHBOARD
 $routes->get("/dashboard", "Dashboard::index");
 
@@ -58,7 +62,8 @@ $routes->get("/budget-headers","BudgetHeaderController::index");
 $routes->post("/budget-headers/add","BudgetHeaderController::add");
 $routes->get('/budget-header/(:num)', "BudgetHeaderController::show/$1");
 $routes->get('/budget-header/delete/(:num)', "BudgetHeaderController::delete/$1");
-
+$routes->get('/budget-header/(:num)', "BudgetHeaderController::show/$1");
+$routes->post("budget-headers/updateHeaders", "BudgetHeaderController::updateHeaders");
 //SERVICE MANAGER
 $routes->get('/gestion-service','ServiceManagerController::index');
 

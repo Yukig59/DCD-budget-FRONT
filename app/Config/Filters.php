@@ -35,7 +35,7 @@ class Filters extends BaseConfig
      */
     public $globals = [
         'before' => [
-             'checkLogin'=> ['except' => '/login'],
+             'checkLogin'=> ['except' => ['/login', '/register']],
             // 'csrf',
             // 'invalidchars',
         ],

@@ -8,6 +8,7 @@ abstract class AbstractModel
     const READ = "read";
     const UPDATE = "update";
     const DELETE = "delete";
+
     public function requestData(string $url)
     {
         $headers = array('Content-Type: application/json',);
@@ -29,10 +30,10 @@ abstract class AbstractModel
         return json_decode($result) ?? false;
     }
 
-    public function sendData($data, $url){
+    public function sendData($data, $url)
+    {
 
         $payload = json_encode($data, JSON_UNESCAPED_SLASHES);
-var_dump($payload);
         $headers = array('Content-Type: application/json',);
         // Open connection
         $ch = curl_init($url);
@@ -48,7 +49,6 @@ var_dump($payload);
                 'Content-Type: application/json',
                 'Content-Length: ' . strlen($payload))
         );
-
         /* set return type json */
         /* execute request */
         $result = curl_exec($ch);
@@ -57,7 +57,9 @@ var_dump($payload);
         // get the result and parse to JSON
         return json_decode($result);
     }
-    public function deleteData($url){
+
+    public function deleteData($url)
+    {
         $headers = array('Content-Type: application/json',);
         // Open connection
         $ch = curl_init();
@@ -74,5 +76,38 @@ var_dump($payload);
         // Close connection
         curl_close($ch);
         return $result;
+    }
+
+    public function patchData($data, $url)
+    {
+        $payload = json_encode($data, JSON_UNESCAPED_SLASHES);
+        $headers = array('Content-Type: application/merge-patch+json',);
+        // Open connection
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PATCH');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLINFO_HEADER_OUT, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        /* set the content type json */
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                'Content-Type: application/merge-patch+json',
+                'Content-Length: ' . strlen($payload))
+        );
+
+        /* set return type json */
+        /* execute request */
+        $result = curl_exec($ch);
+        // Close connection
+        curl_close($ch);
+        // get the result and parse to JSON
+        return json_decode($result);
+    }
+
+    public function getItemFromIri($iri)
+    {
+        $url = "https://localhost:8000" . $iri;
+        return $this->requestData($url);
     }
 }

@@ -49,7 +49,6 @@
                             </span>
                     </div>
                 </div>
-                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
                 <div class="columns is-centered m-2">
                     <input type="submit" name="submit" value="Connexion"
