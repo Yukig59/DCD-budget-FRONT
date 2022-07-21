@@ -24,24 +24,24 @@ $session = session();
     </div>
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item" href="<?= base_url('/dashboard')?>">
+            <a class="navbar-item" href="<?= base_url('/dashboard') ?>">
                 Dashboard
             </a>
             <a class="navbar-item">
                 Documentation
             </a>
             <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link" >
+                <a class="navbar-link">
                     Outils d'administration
                 </a>
                 <div class="navbar-dropdown">
-                    <a class="navbar-item" href="<?= base_url('/budget-headers')?>">
+                    <a class="navbar-item" href="<?= base_url('/budget-headers') ?>">
                         Gérer les lignes de budget
                     </a>
-                    <a class="navbar-item" href="base_url('/dashboard')">
+                    <a class="navbar-item" href="<?= base_url("/purchase-orders") ?>">
                         Gérer les bons de commandes
                     </a>
-                    <a class="navbar-item" href="<?= base_url('/gestion-service')?>">
+                    <a class="navbar-item" href="<?= base_url('/gestion-service') ?>">
                         Réglages du service
                     </a>
                 </div>
@@ -84,20 +84,20 @@ $session = session();
         </div>
         <div class="navbar-end">
 
-                <p class="navbar-item">Bonjour
-                    </p>
-                <a class="navbar-item">
-                    <i class="fa fa-user"></i>&nbsp; <?= $session->prenom . " " . $session->nom ?>
-                </a>
-                <div class="navbar-item">
-                    <div class="buttons">
-                        <a class="button is-primary" href="<?= base_url("/logout") ?>">
-                            <strong>
-                                Se déconnecter</strong>
-                        </a>
+            <p class="navbar-item">Bonjour
+            </p>
+            <a class="navbar-item">
+                <i class="fa fa-user"></i>&nbsp; <?= $session->prenom . " " . $session->nom ?>
+            </a>
+            <div class="navbar-item">
+                <div class="buttons">
+                    <a class="button is-primary" href="<?= base_url("/logout") ?>">
+                        <strong>
+                            Se déconnecter</strong>
+                    </a>
 
-                    </div>
                 </div>
+            </div>
         </div>
     </div>
 </nav>

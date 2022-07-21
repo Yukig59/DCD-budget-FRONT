@@ -1,3 +1,8 @@
+<?php
+
+use CodeIgniter\I18n\Time;
+
+?>
 <?= $this->extend('navbar') ?>
 <?= $this->section('content') ?>
 
@@ -112,8 +117,9 @@
                             <div class="content">
                                 <div class="columns is-centered has-text-centered">
                                     <div class="column">
-                                        <p><abbr title="Budget Prévisionnel">BP</abbr> : <?= $bh->budgetPrevisionnel ?>
-                                            €
+                                        <p><abbr title="Budget Prévisionnel">BP</abbr>
+                                            : <?= number_to_currency($bh->budgetPrevisionnel, 'EUR', 'fr_FR', 2); ?>
+// TODO : replicate ^ behind to all the currencies
                                         </p>
                                         <p><abbr title="Budget Réel">BR</abbr> : <?= $bh->budgetReel ?> €</p>
                                     </div>
@@ -128,7 +134,9 @@
                                     </div>
                                 </div>
                                 <br>
-                                <time><?= $bh->dateCreation ?></time>
+                                <p>Ligne créée
+                                    <time><?= Time::createFromTimestamp($bh->dateCreation)->humanize() ?></time>
+                                </p>
                             </div>
                         </div>
                         <footer class="card-footer">

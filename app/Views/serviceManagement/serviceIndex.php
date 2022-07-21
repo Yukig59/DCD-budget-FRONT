@@ -279,7 +279,7 @@ use CodeIgniter\I18n\Time;
                         </div>
                         <footer class="card-footer">
                             <a onclick="return confirm('Vous êtes sur le point de supprimer cet utilisateur. Êtes-vous sur ?')"
-                                href="<?= base_url("/user/delete/" . $user->id) ?>" class="card-footer-item "><i
+                               href="<?= base_url("/user/delete/" . $user->id) ?>" class="card-footer-item "><i
                                         class="fa fa-trash-alt"></i>&nbsp;
                                 Révoquer l'acces à l'application</a>
                         </footer>
@@ -388,7 +388,7 @@ use CodeIgniter\I18n\Time;
                 </div>
             </div>
         </div>
-        <?php if ($fournisseurs != null) { ?>
+        <?php if (!empty($fournisseurs)) { ?>
             <div class="columns is-centered is-flex-wrap-wrap ml-2 mr-2">
                 <?php foreach ($fournisseurs as $fournisseur) { ?>
                     <div class="column is-one-fifth">

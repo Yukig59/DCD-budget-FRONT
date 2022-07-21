@@ -7,6 +7,7 @@ use App\Controllers\AuthController;
 use App\Controllers\BudgetHeaderController;
 use App\Controllers\FournisseurController;
 use App\Controllers\MarketController;
+use App\Controllers\PurchaseOrderController;
 use App\Controllers\ServiceManagerController;
 
 $routes = Services::routes();
@@ -52,20 +53,26 @@ $routes->get('/logout', "AuthController::logout");
 $routes->post('/logout', "AuthController::logout");
 $routes->get('/user/delete/(:num)', "AuthController::delete/$1");
 // REGISTER
-$routes->get('/register',"AuthController::register");
-$routes->post('/register',"AuthController::register");
+$routes->get('/register', "AuthController::register");
+$routes->post('/register', "AuthController::register");
 //DASHBOARD
 $routes->get("/dashboard", "Dashboard::index");
 
 // BH
-$routes->get("/budget-headers","BudgetHeaderController::index");
-$routes->post("/budget-headers/add","BudgetHeaderController::add");
+$routes->get("/budget-headers", "BudgetHeaderController::index");
+$routes->post("/budget-headers/add", "BudgetHeaderController::add");
 $routes->get('/budget-header/(:num)', "BudgetHeaderController::show/$1");
 $routes->get('/budget-header/delete/(:num)', "BudgetHeaderController::delete/$1");
 $routes->get('/budget-header/(:num)', "BudgetHeaderController::show/$1");
 $routes->post("budget-headers/updateHeaders", "BudgetHeaderController::updateHeaders");
+
+// PO
+$routes->get('/purchase-orders', 'PurchaseOrderController::index');
+$routes->post('/purchase-order/add', "PurchaseOrderController::add");
+
+
 //SERVICE MANAGER
-$routes->get('/gestion-service','ServiceManagerController::index');
+$routes->get('/gestion-service', 'ServiceManagerController::index');
 
 //MARKETS
 $routes->post('/market/add', "MarketController::add");

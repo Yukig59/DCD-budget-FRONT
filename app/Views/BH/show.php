@@ -33,9 +33,11 @@ use CodeIgniter\I18n\Time;
             // Set chart options
             var options = {
                 'title': 'Utilisation de la ligne',
-                'width': 400,
-                'height': 300,
-                'colors': ['red', 'green']
+                'width': 500,
+                'height': 400,
+                'colors': ['red', 'green'],
+                'legend': {position: 'middle', alignment: 'center'},
+                'titleTextStyle':{position: 'top',alignment: "center"}
             };
 
             // Instantiate and draw our chart, passing in some options.
@@ -157,7 +159,7 @@ use CodeIgniter\I18n\Time;
                 </span>
             <?php } ?>
             <br>
-            Ligne créée :
+            <strong>Ligne créée</strong>
             <time><?= Time::createFromTimestamp($bh->dateCreation)->humanize() ?></time>
             <div id="chart_div"></div>
 
@@ -200,7 +202,6 @@ use CodeIgniter\I18n\Time;
         <p class="card-header-title">
             Modifier la ligne </p>
         <a class="card-header-icon" href="#">
-            {# TODO dropdown #}
             <span class="icon">
         <i class="fas fa-angle-down" aria-hidden="true"></i>
       </span>
