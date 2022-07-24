@@ -5,6 +5,7 @@ namespace Config;
 // Create a new instance of our RouteCollection class.
 use App\Controllers\AuthController;
 use App\Controllers\BudgetHeaderController;
+use App\Controllers\Dashboard;
 use App\Controllers\FournisseurController;
 use App\Controllers\MarketController;
 use App\Controllers\PurchaseOrderController;
@@ -57,7 +58,7 @@ $routes->get('/register', "AuthController::register");
 $routes->post('/register', "AuthController::register");
 //DASHBOARD
 $routes->get("/dashboard", "Dashboard::index");
-
+$routes->get('/power-bi', "Dashboard::powerBi");
 // BH
 $routes->get("/budget-headers", "BudgetHeaderController::index");
 $routes->post("/budget-headers/add", "BudgetHeaderController::add");
@@ -65,6 +66,9 @@ $routes->get('/budget-header/(:num)', "BudgetHeaderController::show/$1");
 $routes->get('/budget-header/delete/(:num)', "BudgetHeaderController::delete/$1");
 $routes->get('/budget-header/(:num)', "BudgetHeaderController::show/$1");
 $routes->post("budget-headers/updateHeaders", "BudgetHeaderController::updateHeaders");
+$routes->post("budget-headers/transfer", "BudgetHeaderController::transfer");
+$routes->post("/budget-headers/ask-credit", "BudgetHeaderController::askCredit");
+$routes->post("/budget-headers/accept-virement", "BudgetHeaderController::acceptVirement");
 
 // PO
 $routes->get('/purchase-orders', 'PurchaseOrderController::index');
@@ -77,7 +81,8 @@ $routes->get('/gestion-service', 'ServiceManagerController::index');
 //MARKETS
 $routes->post('/market/add', "MarketController::add");
 $routes->get('/market/delete/(:num)', "MarketController::delete/$1");
-
+$routes->get('/market/edit/(:num)', "MarketController::edit/$1");
+$routes->post('/market/edit/(:num)', "MarketController::edit/$1");
 //Fournisseurs
 $routes->post('/fournisseur/add', "FournisseurController::add");
 $routes->get("/fournisseur/delete/(:num)", "FournisseurController::delete/$1");

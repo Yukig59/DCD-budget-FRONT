@@ -27,7 +27,8 @@ $session = session();
             <a class="navbar-item" href="<?= base_url('/dashboard') ?>">
                 Dashboard
             </a>
-            <a class="navbar-item">
+            <a class="navbar-item" href="https://archerus.gitbook.io/documentation-application-gestion-budget/"
+               target="_blank">
                 Documentation
             </a>
             <div class="navbar-item has-dropdown is-hoverable">
@@ -43,22 +44,6 @@ $session = session();
                     </a>
                     <a class="navbar-item" href="<?= base_url('/gestion-service') ?>">
                         Réglages du service
-                    </a>
-                </div>
-            </div>
-            <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link">
-                    Outils statistiques
-                </a>
-                <div class="navbar-dropdown">
-                    <a class="navbar-item">
-                        Lignes de budget
-                    </a>
-                    <a class="navbar-item">
-                        Bons de commandes
-                    </a>
-                    <a class="navbar-item">
-                        Service
                     </a>
                 </div>
             </div>

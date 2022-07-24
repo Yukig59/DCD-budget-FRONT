@@ -99,7 +99,7 @@ use CodeIgniter\I18n\Time;
         </div>
     </div>
 <?php } ?>
-<?php if (isset($budgetHeaders)) { ?>
+<?php if ($budgetHeaders) { ?>
     <div class="container">
         <div class="columns is-centered is-flex-wrap-wrap is-half-widescreen">
             <?php foreach ($budgetHeaders as $bh) { ?>
@@ -107,7 +107,7 @@ use CodeIgniter\I18n\Time;
                     <div class="card">
                         <header class="card-header">
                             <p class="card-header-title">
-                                <?= $bh->label ?> ( <?= $bh->type->label ?>)
+                                <?= $bh->label ?> (<?= $bh->type->label ?>)
                             </p>
                             <small>Code ligne: <?= $bh->number ?></small>
                             <button class="card-header-icon" aria-label="more options">
@@ -117,19 +117,24 @@ use CodeIgniter\I18n\Time;
                             <div class="content">
                                 <div class="columns is-centered has-text-centered">
                                     <div class="column">
-                                        <p><abbr title="Budget Prévisionnel">BP</abbr>
+                                        <p>Budget Prévisionnel
                                             : <?= number_to_currency($bh->budgetPrevisionnel, 'EUR', 'fr_FR', 2); ?>
-// TODO : replicate ^ behind to all the currencies
+
                                         </p>
-                                        <p><abbr title="Budget Réel">BR</abbr> : <?= $bh->budgetReel ?> €</p>
+                                        <p>Budget Réel
+                                            : <?= number_to_currency($bh->budgetReel, 'EUR', 'fr_FR', 2) ?>
+                                        </p>
                                     </div>
                                     <div class="column">
-                                        <p><abbr title="Budget Utilisé">BU</abbr> : <?= $bh->depenses ?> €</p>
-                                        <p><abbr title="Budget Disponible">BD</abbr> : <?= $bh->budgetReel ?> €
+                                        <p>Budget Utilisé
+                                            : <?= number_to_currency($bh->depenses, 'EUR', 'fr_FR', 2) ?>
+                                        </p>
+                                        <p>Budget Disponible
+                                            : <?= number_to_currency($bh->budgetReel, 'EUR', 'fr_FR', 2) ?>
                                         </p>
                                         <p>
-                                            <abbr title="Pourcentage Disponible">PD</abbr>
-                                            <?= round(($bh->budgetReel - $bh->depenses) / $bh->budgetReel * 100, 2) ?> %
+                                            Pourcentage Disponible
+                                            <?= round($bh->budgetReel / $bh->budgetPrevisionnel * 100, 2) ?> %
                                         </p>
                                     </div>
                                 </div>

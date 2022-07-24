@@ -177,15 +177,16 @@ use CodeIgniter\I18n\Time;
                                 </div>
                             </div>
                             <footer class="card-footer">
-                                <a href="{{ path('show_market', {'numeroMarche':market.numeroMarche }) }}"
-                                   class="card-footer-item"><i class="fa fa-info-circle"></i>&nbsp;
-                                    Détails</a>
+                                <a class="card-footer-item" href="<?= base_url('/market/edit/' . $market->id) ?>"><i
+                                            class="fa fa-info-circle"></i>&nbsp;
+                                    Modifier</a>
                                 <a href="<?= base_url('/market/delete/' . $market->id) ?>"
                                    onclick="return confirm('Vous êtes sur le point de supprimer ce marché publique. Êtes-vous sur ?')"
                                    class="card-footer-item"><i
                                             class="fa fa-trash-alt"></i>&nbsp;
                                     Supprimer</a>
                             </footer>
+
                         </div>
                     </div>
 
@@ -216,6 +217,15 @@ use CodeIgniter\I18n\Time;
 
                 // Add a click event on buttons to open a specific modal
                 (document.querySelectorAll('.js-modal-add') || []).forEach(($trigger) => {
+                    const modal = $trigger.dataset.target;
+                    const $target = document.getElementById(modal);
+                    console.log($target);
+
+                    $trigger.addEventListener('click', () => {
+                        openModal($target);
+                    });
+                });
+                (document.querySelectorAll('.modal-edit-market') || []).forEach(($trigger) => {
                     const modal = $trigger.dataset.target;
                     const $target = document.getElementById(modal);
                     console.log($target);

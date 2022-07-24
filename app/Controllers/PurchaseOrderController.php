@@ -26,10 +26,10 @@ class PurchaseOrderController extends BaseController
         $fournisseur = new FournisseurModel();
         $bh = new BudgetHeaderModel();
         $data['budgetHeaders'] = $bh->getAllBudgetHeaders($session->service);
-        $data['fournisseurs'] = $fournisseur->getFournisseurs($session->service);
+        $data['fournisseurs'] = $fournisseur->getFournisseursByService($session->service);
         $data['users'] = $user->getUsers($session->service);
-        $data['purchaseOrders'] = $po->getAllPurchaseOrders($session->service);
-        $data['marches'] = $marche->getAllMarkets($session->service);
+        $data['purchaseOrders'] = $po->getAllPurchaseOrdersByService($session->service);
+        $data['marches'] = $marche->getMarketsByService($session->service);
         return view('PO/index', $data);
     }
 
@@ -39,7 +39,12 @@ class PurchaseOrderController extends BaseController
         $session = session();
         $po = new PurchaseOrderModel();
         $request['service'] = $session->serviceId;
-        var_dump($po->add($request));
-        die();
+        $request['userIri'] = "/api/users/" . $session->id;
+        if (isset($po->add($request)->id)){
+            return redirect()->to('/purchase-orders')->with('message', 'Bon de commande créée avec succes !');
+        } else {
+            return redirect()->to('/purchase-orders')->with('message', 'Une erreur s\'est produite, veuillez réessayer');
+        }
+
     }
 }

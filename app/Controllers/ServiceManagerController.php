@@ -18,11 +18,11 @@ class ServiceManagerController extends BaseController
             $message = null;
         }
         $market = new MarketModel();
-        $markets = $market->getAllMarkets($session->service);
+        $markets = $market->getMarketsByService($session->service);
         $user = new UserModel();
         $users = $user->getUsers($session->service);
         $fournisseur = new FournisseurModel();
-        $fournisseurs = $fournisseur->getFournisseurs($session->service);
+        $fournisseurs = $fournisseur->getFournisseursByService($session->service);
         $data = [
             'message' => $message,
             'markets' => $markets,

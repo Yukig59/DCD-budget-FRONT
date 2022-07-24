@@ -7,6 +7,7 @@ abstract class AbstractModel
     const CREATE = "create";
     const READ = "read";
     const UPDATE = "update";
+    const TRANSFER = "transfer";
     const DELETE = "delete";
 
     public function requestData(string $url)
@@ -81,7 +82,6 @@ abstract class AbstractModel
     public function patchData($data, $url)
     {
         $payload = json_encode($data, JSON_UNESCAPED_SLASHES);
-        $headers = array('Content-Type: application/merge-patch+json',);
         // Open connection
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PATCH');

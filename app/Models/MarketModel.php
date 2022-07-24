@@ -8,29 +8,52 @@ class MarketModel extends AbstractModel
 {
     const URL = "https://localhost:8000/api/marches";
 
-    public function getAllMarkets($code)
+    public function getMarketsByService($code)
     {
         $url = self::URL . "?service.code=" . $code;
         return $this->requestData($url) ?? false;
 
     }
-    public function addMarket($data){
+
+    public function getMarketById($id)
+    {
+        $url = self::URL . "/" . $id;
+        return $this->requestData($url) ?? false;
+
+    }
+
+    public function getAllMarkets()
+    {
+        $url = self::URL;
+        return $this->requestData($url) ?? false;
+
+    }
+
+    public function addMarket($data)
+    {
         $startDate = date_create($data['startDate'])->getTimestamp();
-        $endtDate = date_create($data['endDate'])->getTimestamp();
+        $endDate = date_create($data['endDate'])->getTimestamp();
         $postData = [
-            "label"=>$data['label'],
-            "code"=>$data['numero'],
-            "dateDebut"=>(int)$startDate,
-            "dateFin"=>(int)$endtDate,
-            "service"=>$data['serviceIri'],
-            "type"=>[
-                "label"=>$data['typologie']
+            "label" => $data['label'],
+            "code" => $data['numero'],
+            "dateDebut" => (int)$startDate,
+            "dateFin" => (int)$endDate,
+            "service" => $data['serviceIri'],
+            "type" => [
+                "label" => $data['typologie']
             ] // TODO : get Type by value selected
         ];
         return $this->sendData($postData, self::URL);
     }
-    public function deleteMarket($id){
-        $url = self::URL."/". $id;
+
+    public function deleteMarket($id)
+    {
+        $url = self::URL . "/" . $id;
         return $this->deleteData($url);
+    }
+
+    public function editMarket($id)
+    {
+
     }
 }

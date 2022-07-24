@@ -6,6 +6,19 @@ use CodeIgniter\I18n\Time;
 <?= $this->extend('navbar') ?>
 <?= $this->section('content') ?>
 <head>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdn.datatables.net/v/bm/jq-3.6.0/dt-1.12.1/b-2.2.3/b-html5-2.2.3/datatables.min.css"/>
+
+    <script type="text/javascript"
+            src="https://cdn.datatables.net/v/bm/jq-3.6.0/dt-1.12.1/b-2.2.3/b-html5-2.2.3/datatables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
+    <!--
+    *   Google Chart configuration
+    -->
     <!--Load the AJAX API-->
     <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script>
@@ -37,7 +50,7 @@ use CodeIgniter\I18n\Time;
                 'height': 400,
                 'colors': ['red', 'green'],
                 'legend': {position: 'middle', alignment: 'center'},
-                'titleTextStyle':{position: 'top',alignment: "center"}
+                'titleTextStyle': {position: 'top', alignment: "center"}
             };
 
             // Instantiate and draw our chart, passing in some options.
@@ -46,6 +59,7 @@ use CodeIgniter\I18n\Time;
         }
     </script>
 </head>
+<!--Modal Modifier les en-têtes-->
 <div id="js-modal-edit-headers" class="modal" xmlns="http://www.w3.org/1999/html">
     <div class="modal-background"></div>
     <div class="modal-content" style="overflow-y: hidden">
@@ -109,6 +123,136 @@ use CodeIgniter\I18n\Time;
 
     </div>
 </div>
+<!--Modal Faire un virement-->
+<div id="js-modal-do-virement" class="modal" xmlns="http://www.w3.org/1999/html">
+    <div class="modal-background"></div>
+    <div class="modal-content" style="overflow-y: hidden">
+        <div class="box">
+            <button class="modal-close is-large" aria-label="close"></button>
+            <header class="modal-card-head">
+                <p class="title is-3 has-text-centered has-text-dark"><strong>Faire un virement de crédits</strong>
+                </p>
+            </header>
+            <div class="hero-body has-text-centered is-fullwidth" style="justify-content: center">
+
+                <form action="<?= base_url("/budget-headers/transfer") ?>" method="post">
+
+                    <div class="field">
+                        <label for="fromBhId" class="label">Ligne de budget à prélever</label>
+                        <div class="control has-icons-left">
+                            <div class="select is-fullwidth is-rounded">
+                                <select name="fromBhId" id="fromBhId">
+                                    <?php foreach ($budgetHeaders as $bh) { ?>
+                                        <option value="<?= $bh->id ?>"><?= $bh->label . " (n° " . $bh->number . ")" ?></option>
+                                    <?php } ?>
+                                </select>
+                                <span class="icon is-small is-left">
+                                        <i class="fas fa-money-bill-1-wave"></i>
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="toBhId" class="label">Ligne de budget à créditer</label>
+                        <div class="control has-icons-left">
+                            <div class="select is-fullwidth is-rounded">
+                                <select name="toBhId" id="toBhId">
+                                    <?php foreach ($budgetHeaders as $bh) { ?>
+                                        <option value="<?= $bh->id ?>"><?= $bh->label . " (n° " . $bh->number . ")" ?></option>
+                                    <?php } ?>
+                                </select>
+                                <span class="icon is-small is-left">
+                                        <i class="fas fa-money-bill-1-wave"></i>
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+
+                        <label for="montant" class="label">Montant à créditer</label>
+                        <div class="control has-icons-left">
+                            <input type="text" class="input is-rounded" id="montant" name="montant"
+                                   placeholder="500">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-euro"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="columns is-centered m-2">
+                        <input type="submit" class="button is-primary is-rounded" value="Enregistrer"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<!--Modal demander un virement-->
+<div id="js-modal-ask-credit" class="modal" xmlns="http://www.w3.org/1999/html">
+    <div class="modal-background"></div>
+    <div class="modal-content" style="overflow-y: hidden">
+        <div class="box">
+            <button class="modal-close is-large" aria-label="close"></button>
+            <header class="modal-card-head">
+                <p class="title is-3 has-text-centered has-text-dark"><strong>Demander un virement de crédits</strong>
+                </p>
+            </header>
+            <div class="hero-body has-text-centered is-fullwidth" style="justify-content: center">
+                <form action="<?= base_url("/budget-headers/ask-credit") ?>" method="post">
+
+                    <div class="field">
+                        <label for="bhId" class="label">Ligne de budget à créditer</label>
+                        <div class="control has-icons-left">
+                            <div class="select is-fullwidth is-rounded">
+                                <select name="bhId" id="bhId">
+                                    <?php foreach ($budgetHeaders as $bh) { ?>
+                                        <option value="<?= $bh->id ?>"><?= $bh->label . " (n° " . $bh->number . ")" ?></option>
+                                    <?php } ?>
+                                </select>
+                                <span class="icon is-small is-left">
+                                        <i class="fas fa-money-bill-1-wave"></i>
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="userIdToNotify" class="label">Faire la demande à :</label>
+                        <div class="control has-icons-left">
+                            <div class="select is-fullwidth is-rounded">
+                                <select name="userIdToNotify" id="userIdToNotify">
+                                    <?php foreach ($users as $user) { ?>
+                                        <option value="<?= $user->id ?>"><?= $user->prenom . " " . strtoupper($user->nom) ?></option>
+                                    <?php } ?>
+                                </select>
+                                <span class="icon is-small is-left">
+                                        <i class="fas fa-user"></i>
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+
+                        <label for="montant" class="label">Montant à de la demande</label>
+                        <div class="control has-icons-left">
+                            <input type="text" class="input is-rounded" id="montant" name="montant"
+                                   placeholder="500">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-euro"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="columns is-centered m-2">
+                        <input type="submit" class="button is-primary is-rounded" value="Enregistrer"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
 </div>
 
 <div class="card column is-fullwidth is-vcentered m-5">
@@ -168,23 +312,25 @@ use CodeIgniter\I18n\Time;
             <p class="card-header-title">Historique : </p>
             <div class="box" style="height: 490px; overflow: auto">
                 <?php foreach ($logs as $log) { ?>
-<!--                    --><?php //var_dump($log);die(); ?>
                     Le <?= Time::createFromTimestamp($log->date, 'Europe/Paris', 'fr_FR') ?>, <?= getItemFromIri($log->userActor)->prenom . " " . getItemFromIri($log->userActor)->nom ?> à <?php
                     switch ($log->action) {
                         case 'create':
-                            ?>créé
+                            ?>créé un(e)
                             <?php break;
                         case 'update': ?>
-                            mis à jour
+                            mis à jour un(e)
                             <?php break;
                         case 'delete':
                             ?>
-                            supprimé
+                            supprimé un(e)
                             <?php break;
-                    } ?> un
+                        case 'transfer':
+                            ?>
+                            transféré des crédits vers un(e)
+                        <?php } ?>
                     <?= $log->target ?>
                     <br>
-                    <?php if ($log->action !== "create") { ?>
+                    <?php if ($log->propertyChanged) { ?>
                         <?= $log->propertyChanged ?>:
                         <span class="has-text-danger"><strike><?= $log->oldValue ?></strike></span>
                         <span class="has-text-success"><?= $log->newValue ?></span>
@@ -216,19 +362,67 @@ use CodeIgniter\I18n\Time;
 
             </div>
             <div class="column ">
-                <div class="button is-info">
+                <button class="js-modal-do-virement button is-info" data-target="js-modal-do-virement">
                     Faire un virement de crédits
-                </div>
+                </button>
             </div>
             <div class="column ">
-                <a class="button is-info">
+                <button class="js-modal-ask-credit button is-info" data-target="js-modal-ask-credit">
                     Demander un virement de crédits
-                </a>
+                </button>
             </div>
         </div>
     </div>
 </div>
+<div class="container is-fullwidth ">
+    <div class="has-text-centered">
+        <p class="subtitle is-3 ">Liste des bons de commandes rattachés a cette ligne</p>
 
+    </div>
+    <table id="example" class="display table is-striped is-hoverable is-narrow" style="width:100%">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Numéro</th>
+            <th>Imputation</th>
+            <th>Label</th>
+            <th>Montant</th>
+            <th>Date de création</th>
+            <th>Fournisseur</th>
+            <th>Marché publique</th>
+            <th>Emetteur</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($purchaseOrders as $po) { ?>
+            <tr>
+                <td><?= $po->id ?></td>
+                <td><?= $po->number ?></td>
+                <td><?= $po->imputation ?></td>
+                <td><?= $po->label ?></td>
+                <td><?= $po->montant ?></td>
+                <td><?= $po->dateCreation ?></td>
+                <td><?= getItemFromIri($po->fournisseur)->raisonSociale ?></td>
+                <td><?= getItemFromIri($po->marche)->label ?></td>
+                <td><?= getItemFromIri($po->emetteur)->prenom . " " . getItemFromIri($po->emetteur)->nom ?></td>
+            </tr>
+        <?php } ?>
+        </tbody>
+        <tfoot>
+        <tr>
+            <th>#</th>
+            <th>Numéro</th>
+            <th>Imputation</th>
+            <th>Label</th>
+            <th>Montant</th>
+            <th>Date de création</th>
+            <th>Fournisseur</th>
+            <th>Marché publique</th>
+            <th>Emetteur</th>
+        </tr>
+        </tfoot>
+    </table>
+</div>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
@@ -241,6 +435,7 @@ use CodeIgniter\I18n\Time;
     });
 </script>
 <script>
+
     document.addEventListener('DOMContentLoaded', () => {
         // Functions to open and close a modal
         function openModal($el) {
@@ -259,6 +454,24 @@ use CodeIgniter\I18n\Time;
 
         // Add a click event on buttons to open a specific modal
         (document.querySelectorAll('.js-modal-edit-headers') || []).forEach(($trigger) => {
+            const modal = $trigger.dataset.target;
+            const $target = document.getElementById(modal);
+            console.log($target);
+
+            $trigger.addEventListener('click', () => {
+                openModal($target);
+            });
+        });
+        (document.querySelectorAll('.js-modal-do-virement') || []).forEach(($trigger) => {
+            const modal = $trigger.dataset.target;
+            const $target = document.getElementById(modal);
+            console.log($target);
+
+            $trigger.addEventListener('click', () => {
+                openModal($target);
+            });
+        });
+        (document.querySelectorAll('.js-modal-ask-credit') || []).forEach(($trigger) => {
             const modal = $trigger.dataset.target;
             const $target = document.getElementById(modal);
             console.log($target);
