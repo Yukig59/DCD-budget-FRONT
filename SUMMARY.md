@@ -5,8 +5,6 @@
 ## Démarrage
 
 * [Avant de commencer](demarrage/avant-de-commencer.md)
-* [Inscription sur le site](demarrage/inscription-sur-le-site.md)
-* [Connexion](demarrage/connexion.md)
 * [Première utilisation](demarrage/premiere-utilisation.md)
 
 ## Navigation dans l'application
@@ -19,7 +17,17 @@
 
 ## Gérer les données
 
+* [Utilisateurs](gerer-les-donnees/utilisateurs/README.md)
+  * [Inscription sur le site](gerer-les-donnees/utilisateurs/inscription-sur-le-site.md)
+  * [Connexion](gerer-les-donnees/utilisateurs/connexion.md)
+  * [Révoquer un accès à l'application](gerer-les-donnees/utilisateurs/revoquer-un-acces-a-lapplication.md)
 * [Marchés publiques](gerer-les-donnees/marches-publiques/README.md)
   * [Créer un marché publique](gerer-les-donnees/marches-publiques/creer-un-marche-publique.md)
   * [Modifier un marché publique](gerer-les-donnees/marches-publiques/modifier-un-marche-publique.md)
   * [Supprimer un marché publique](gerer-les-donnees/marches-publiques/supprimer-un-marche-publique.md)
+* [Fournisseurs](gerer-les-donnees/fournisseurs/README.md)
+  * [Créer un fournisseur](gerer-les-donnees/fournisseurs/creer-un-fournisseur.md)
+  * [Modifier un fournisseur](gerer-les-donnees/fournisseurs/modifier-un-fournisseur.md)
+  * [Supprimer un fournisseur](gerer-les-donnees/fournisseurs/supprimer-un-fournisseur.md)
+* [Lignes de budget](gerer-les-donnees/lignes-de-budget/README.md)
+  * [Créer une ligne de budget](gerer-les-donnees/lignes-de-budget/creer-une-ligne-de-budget.md)
