@@ -139,7 +139,7 @@ class BudgetHeaderModel extends AbstractModel
     {
         $url = self::URL . "/" . $data['bhId'];
         $montant = $data['montant'];
-        $bh = $this->getBudgetHeaderById($data['bhId'])[0];
+        $bh = $this->getBudgetHeaderById($data['bhId']);
         $log1 = [
             "date" => date_create()->getTimestamp(),
             "action" => self::CREATE,

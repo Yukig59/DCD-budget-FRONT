@@ -201,15 +201,17 @@ use CodeIgniter\I18n\Time;
                 <div class="card">
                     <header class="card-header">
                         <p class="card-header-title">
-                            <?= $po->label . " (" . $po->type->label . ")" ?>
+                            <?= $po->label ?> <br>
+                            <?= " Ligne n°" . $po->budgetHeader->id ?>
                         </p>
-                        <small>N° de bon de commande: <?= $po->number ?>| Imputation
-                            : <?= $po->imputation ?></small>
+
                         <button class="card-header-icon" aria-label="more options">
                         </button>
                     </header>
                     <div class="card-content">
                         <div class="content">
+                            <p>N° de bon de commande: <?= $po->number ?></p>
+                            <p> Imputation: <?= $po->imputation ?></p>
                             <div class="columns is-centered has-text-centered">
                                 <div class="column">
                                     <p>Montant : <?= number_to_currency($po->montant, 'EUR', 'fr_FR', 2); ?>
@@ -221,22 +223,14 @@ use CodeIgniter\I18n\Time;
                             </div>
                             <br>Créé
                             <time><?= Time::createFromTimestamp($po->dateCreation)->humanize() ?></time>
-                            <?php if ($po->dateValidation !== null && $po->validator != null) { ?>
-                                <br>
-                                Validé
-                                <time><?= Time::createFromTimestamp($po->dateValidation)->humanize() ?></time>
-                                <p>par</p>
-                                <?= $po->validator->prenom . " " . strtoupper($po->validator->nom) ?>
-                            <?php } else { ?>
-                                <p class="has-text-danger-dark">Bon de commande en attente de validation</p>
-                            <?php } ?>
+
                         </div>
                     </div>
                     <footer class="card-footer">
-                        <a href="{{ path('show_po', {'poNumber': item.poNumber }) }}"
-                           class="card-footer-item"><i class="fa fa-info-circle"></i>&nbsp;
-                            Détails</a>
-                        <a href="{{ path('delete_po', {'poNumber':item.poNumber }) }}"
+                        <a href="<?= base_url('/purchase-order/edit/' . $po->id) ?>"
+                           class="card-footer-item modal-js-edit"><i class="fa fa-info-circle"></i>&nbsp;
+                            Modifier</a>
+                        <a href="<?= base_url('purchase-order/delete/' . $po->id) ?>"
                            onclick="return confirm('Vous êtes sur le point de supprimer ce bon de commande. Êtes-vous sur ?')"
                            class="card-footer-item"><i
                                     class="fa fa-trash-alt"></i>&nbsp;
@@ -270,6 +264,15 @@ use CodeIgniter\I18n\Time;
 
             // Add a click event on buttons to open a specific modal
             (document.querySelectorAll('.js-modal-add') || []).forEach(($trigger) => {
+                const modal = $trigger.dataset.target;
+                const $target = document.getElementById(modal);
+                console.log($target);
+
+                $trigger.addEventListener('click', () => {
+                    openModal($target);
+                });
+            });
+            (document.querySelectorAll('.modal-js-edit') || []).forEach(($trigger) => {
                 const modal = $trigger.dataset.target;
                 const $target = document.getElementById(modal);
                 console.log($target);

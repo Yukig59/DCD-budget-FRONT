@@ -59,6 +59,7 @@ $routes->post('/register', "AuthController::register");
 //DASHBOARD
 $routes->get("/dashboard", "Dashboard::index");
 $routes->get('/power-bi', "Dashboard::powerBi");
+$routes->get('/delete-notif/(:num)', "Dashboard::deleteNotification/$1");
 // BH
 $routes->get("/budget-headers", "BudgetHeaderController::index");
 $routes->post("/budget-headers/add", "BudgetHeaderController::add");
@@ -73,6 +74,9 @@ $routes->post("/budget-headers/accept-virement", "BudgetHeaderController::accept
 // PO
 $routes->get('/purchase-orders', 'PurchaseOrderController::index');
 $routes->post('/purchase-order/add', "PurchaseOrderController::add");
+$routes->get('/purchase-order/edit/(:num)', "PurchaseOrderController::show/$1");
+$routes->post('/purchase-order/edit/(:num)', "PurchaseOrderController::show/$1");
+$routes->get('/purchase-order/delete/(:num)', "PurchaseOrderController::delete/$1");
 
 
 //SERVICE MANAGER

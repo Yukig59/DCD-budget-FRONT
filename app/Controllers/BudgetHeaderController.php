@@ -23,7 +23,6 @@ class BudgetHeaderController extends BaseController
         $bh = new BudgetHeaderModel();
         $budgetHeaders = $bh->getAllBudgetHeaders($code);
         $data['budgetHeaders'] = $budgetHeaders;
-
         return view('BH/index.php', $data);
     }
 
@@ -42,7 +41,6 @@ class BudgetHeaderController extends BaseController
         $data['logs'] = $log->getBhLogsById($bhId);
         $data['session'] = $session;
         return view('BH/show', $data);
-
     }
 
     public function add()

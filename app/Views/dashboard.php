@@ -35,8 +35,8 @@
             var options2 = {
                 'title': 'Fonctionnement',
                 'backgroundColor': '#DBDBDB',
-                'width': 400,
-                'height': 400,
+                'width': 350,
+                'height': 350,
                 'colors': ['red', 'green'],
                 'legend': {position: 'middle', alignment: 'center'},
                 titleTextStyle: {
@@ -48,8 +48,8 @@
             var options = {
                 'title': 'Investissement',
                 'backgroundColor': '#DBDBDB',
-                'width': 400,
-                'height': 400,
+                'width': 350,
+                'height': 350,
                 'colors': ['red', 'green'],
                 'legend': {position: 'middle', alignment: 'center'},
                 titleTextStyle: {
@@ -67,8 +67,9 @@
         }
     </script>
 </head>
-<div class="columns">
-    <aside class="menu is-4" style="
+<div class="is-flex columns mt-3 is-just-content-space-between">
+    <div class="column is-3 is-boxed">
+        <aside class="menu" style="
       position: sticky;
       display: inline-block;
       vertical-align: top;
@@ -78,77 +79,77 @@
       bottom: 0;
       padding: 30px;
 ">
-        <ul class="menu-list">
-            <li><a href="<?= base_url('/dashboard') ?>">Dashboard</a></li>
-        </ul>
-        <p class="menu-label">
-            Administration
-        </p>
-        <ul class="menu-list">
-            <li>
-                <a>Lignes de budget</a>
-                <ul>
-                    <li><a href="<?= base_url('/budget-headers') ?>">Liste des lignes de budget</a></li>
-                    <li><a class="addbh" data-target="addbh">Ajouter une nouvelle ligne</a></li>
-                    <li><a>Statistiques</a></li>
-                </ul>
-            </li>
-            <li>
-                <a>Bons de commandes</a>
-                <ul>
-                    <li><a href="<?= base_url('/purchase-orders') ?>">Liste des bons de commandes</a></li>
-                    <li><a class="addpo" data-target="addpo">Ajouter un bon de commande</a></li>
-                    <li><a>Statistiques</a></li>
-                </ul>
-            </li>
-        </ul>
-        <p class="menu-label">
-            Configuration
-        </p>
-        <ul class="menu-list">
-            <li><a href="<?= base_url("/gestion-service/") ?>"> Réglages du service</a></li>
-        </ul>
-    </aside>
-
-    <div class="columns">
-
-        <div class="m-6 column is-8 is-narrow box has-background-grey-lighter">
-            <p class="title is-3">Résumé des dépenses du service</p>
-            <div class="columns is-left">
-                <div id="chart_div"></div>
-                <div id="chart2_div"></div>
-            </div>
-        </div>
-        <div class="m-6 column is-4 box has-background-primary-light" style="overflow: auto">
-            <p class="title is-3">Chiffres clés</p>
-            <p class="title is-5">Budget restant en fonctionnement</p>
-            <?php foreach ($BudgetHeadersF as $bh) { ?>
-                <p><?= $bh->label ?> (<?= $bh->budgetReel ?>
-                    /<?= $bh->budgetPrevisionnel ?></p>
-                <progress class="progress is-primary"
-                          value="<?= ($bh->budgetReel == $bh->budgetPrevisionnel) ? $bh->budgetPrevisionnel : $bh->budgetPrevisionnel - $bh->budgetReel ?>"
-                          max="<?= $bh->budgetPrevisionnel ?>"></progress>
-            <?php } ?>
-            <p class="title is-5">Budget restant en investissement</p>
-            <?php foreach ($BudgetHeadersI as $bh) { ?>
-                <p><?= $bh->label ?> (<?= $bh->budgetReel ?>
-                    /<?= $bh->budgetPrevisionnel ?></p>
-                <progress class="progress is-primary"
-                          value="<?= ($bh->budgetReel == $bh->budgetPrevisionnel) ? $bh->budgetPrevisionnel : $bh->budgetPrevisionnel - $bh->budgetReel ?>"
-                          max="<?= $bh->budgetPrevisionnel ?>"></progress>
-            <?php } ?>
+            <ul class="menu-list">
+                <li><a href="<?= base_url('/dashboard') ?>">Dashboard</a></li>
+            </ul>
+            <p class="menu-label">
+                Administration
+            </p>
+            <ul class="menu-list">
+                <li>
+                    <a>Lignes de budget</a>
+                    <ul>
+                        <li><a href="<?= base_url('/budget-headers') ?>">Liste des lignes de budget</a></li>
+                        <li><a class="addbh" data-target="addbh">Ajouter une nouvelle ligne</a></li>
+                        <li><a>Statistiques</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Bons de commandes</a>
+                    <ul>
+                        <li><a href="<?= base_url('/purchase-orders') ?>">Liste des bons de commandes</a></li>
+                        <li><a class="addpo" data-target="addpo">Ajouter un bon de commande</a></li>
+                        <li><a>Statistiques</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <p class="menu-label">
+                Configuration
+            </p>
+            <ul class="menu-list">
+                <li><a href="<?= base_url("/gestion-service/") ?>"> Réglages du service</a></li>
+            </ul>
+        </aside>
+    </div>
+    <div class="column is-5">
+        <p class="title is-3">Résumé des dépenses du service</p>
+        <div class="columns is-left">
+            <div id="chart_div"></div>
+            <br>
+            <div id="chart2_div"></div>
         </div>
     </div>
+    <div class="column is-3" style="overflow: auto">
+        <p class="title is-3">Chiffres clés</p>
+        <p class="title is-5">Budget restant en fonctionnement</p>
+        <?php foreach ($BudgetHeadersF as $bh) { ?>
+            <p><?= $bh->label ?> (<?= $bh->budgetReel ?>
+                /<?= $bh->budgetPrevisionnel ?> €)</p>
+            <progress class="progress is-primary"
+                      value="<?= ($bh->budgetReel == $bh->budgetPrevisionnel) ? $bh->budgetPrevisionnel : $bh->budgetPrevisionnel - ($bh->budgetPrevisionnel - $bh->budgetReel) ?>"
+                      max="<?= $bh->budgetPrevisionnel ?>"></progress>
+        <?php } ?>
+        <p class="title is-5">Budget restant en investissement</p>
+        <?php foreach ($BudgetHeadersI as $bh) { ?>
+            <p><?= $bh->label ?> (<?= $bh->budgetReel ?>
+                /<?= $bh->budgetPrevisionnel ?></p>
+            <progress class="progress is-primary"
+                      value="<?= ($bh->budgetReel == $bh->budgetPrevisionnel) ? $bh->budgetPrevisionnel : $bh->budgetPrevisionnel - ($bh->budgetPrevisionnel - $bh->budgetReel) ?>"
+                      max="<?= $bh->budgetPrevisionnel ?>"></progress>
+        <?php } ?>
+    </div>
+</div>
 </div>
 <?php if ($notification !== null) { ?>
-    <div class="container" style="width: 100vw">
-        <div class="container is-half">
-            <div class="notification has-background-warning">
-                <button class='delete'></button>
+    <div class="container " style="width: 100vw" id="notification">
+        <div class="container is-half has-text-centered">
+            <div class="notification has-background-warning ">
                 Le service <?= $notification->fromService ?? null ?> vous a fait une demande de virement de credits
                 de <?= number_to_currency($notification->montant, 'EUR', 'fr_FR', 2) ?? null ?>. Accepter ?
                 <button class="acceptVirement button is-small is-success" data-target="acceptVirement">Oui</button>
-                <button class="button is-small is-danger">Non</button>
+                <a href="<?= base_url('/delete-notif/' . $session->id) ?>">
+                    <button class="button is-small is-danger remove">Non</button>
+                </a>
             </div>
 
         </div>
@@ -493,7 +494,7 @@
             });
         });
         // Add a click event on various child elements to close the parent modal
-        (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+        (document.querySelectorAll('.modal-background, .modal-close, .remove, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
             const $target = $close.closest('.modal');
 
             $close.addEventListener('click', () => {
@@ -510,6 +511,15 @@
         });
     });
     document.addEventListener('DOMContentLoaded', () => {
+        (document.querySelectorAll('.notification .remove') || []).forEach(($delete) => {
+            const $notification = $delete.parentNode;
+
+            $delete.addEventListener('click', () => {
+                $notification.parentNode.removeChild($notification);
+            });
+        });
+    });
+    document.addEventListener('DOMContentLoaded', () => {
         (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
             const $notification = $delete.parentNode;
 
@@ -518,5 +528,7 @@
             });
         });
     });
+
+
 </script>
 <?= $this->endsection('content') ?>

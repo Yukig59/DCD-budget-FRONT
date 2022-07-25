@@ -20,9 +20,9 @@ class HistoryModel extends AbstractModel
             "purchaseOrder" => $data['purchaseOrder'] ?? null,
             "budgetHeader" => $data['budgetHeader'] ?? null,
             "service" => $data['service'] ?? null,
-            "propertyChanged" => $data['propertyChanged'],
-            "oldValue" =>$data['oldValue'],
-            "newValue" => $data['newValue'],
+            "propertyChanged" => $data['propertyChanged'] ?? null,
+            "oldValue" => $data['oldValue'] ?? null,
+            "newValue" => $data['newValue'] ?? null,
         ];
 
         return $this->sendData($postData, self::URL);

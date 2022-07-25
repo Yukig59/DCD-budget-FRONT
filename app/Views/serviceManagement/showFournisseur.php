@@ -1,8 +1,4 @@
-<?php
-
-use CodeIgniter\I18n\Time;
-
-?><?= $this->extend('navbar') ?>
+<?= $this->extend('navbar') ?>
 <?= $this->section('content') ?>
 <div id="modal-js-add-fourn">
     <div class="modal-background" style="overflow-y: hidden"></div>
