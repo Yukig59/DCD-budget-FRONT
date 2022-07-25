@@ -178,7 +178,7 @@ use CodeIgniter\I18n\Time;
                             </div>
                             <footer class="card-footer">
                                 <a class="card-footer-item" href="<?= base_url('/market/edit/' . $market->id) ?>"><i
-                                            class="fa fa-info-circle"></i>&nbsp;
+                                            class="fa fa-edit"></i>&nbsp;
                                     Modifier</a>
                                 <a href="<?= base_url('/market/delete/' . $market->id) ?>"
                                    onclick="return confirm('Vous êtes sur le point de supprimer ce marché publique. Êtes-vous sur ?')"
@@ -429,9 +429,9 @@ use CodeIgniter\I18n\Time;
                             </div>
                         </div>
                         <footer class="card-footer">
-                            <a href="{{ path('show_fournisseur', {'fournisseurId':f.fournisseurId }) }}"
-                               class="card-footer-item"><i class="fa fa-info-circle"></i>&nbsp;
-                                Détails</a>
+                            <a href="<?= base_url('/fournisseur/edit/' . $fournisseur->id) ?>"
+                               class="card-footer-item"><i class="fa fa-edit"></i>&nbsp;
+                                Modifier</a>
                             <a href="<?= base_url("/fournisseur/delete/" . $fournisseur->id) ?>"
                                onclick="return confirm('Vous êtes sur le point de supprimer ce fournisseur. Êtes-vous sur ?')"
                                class="card-footer-item"><i

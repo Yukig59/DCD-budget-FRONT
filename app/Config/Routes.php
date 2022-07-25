@@ -86,6 +86,8 @@ $routes->post('/market/edit/(:num)', "MarketController::edit/$1");
 //Fournisseurs
 $routes->post('/fournisseur/add', "FournisseurController::add");
 $routes->get("/fournisseur/delete/(:num)", "FournisseurController::delete/$1");
+$routes->get('/fournisseur/edit/(:num)', "FournisseurController::edit/$1");
+$routes->post('/fournisseur/edit/(:num)', "FournisseurController::edit/$1");
 /*
  * --------------------------------------------------------------------
  * Additional Routing

@@ -12,6 +12,12 @@ class FournisseurModel extends AbstractModel
         return $items ?? FALSE;
     }
 
+    public function getFournisseursById($id)
+    {
+        $items = $this->requestData(self::URL . "/$id");
+        return $items ?? FALSE;
+    }
+
     public function getAllFournisseurs()
     {
         $items = $this->requestData(self::URL);
@@ -31,6 +37,21 @@ class FournisseurModel extends AbstractModel
             "service" => $data['serviceIri'],
         ];
         return $this->sendData($postData, self::URL);
+    }
+
+    public function updateFournisseur($data)
+    {
+        $postData = [
+            "raisonSociale" => $data['raisonSociale'],
+            "addressLine1" => $data['addr1'],
+            "addressLine2" => $data['addr2'],
+            "zipCode" => (int)$data['zipcode'],
+            "city" => $data['city'],
+            "telephone" => (string)$data['telephone'],
+            "siret" => (string)$data['siret'],
+            "service" => $data['serviceIri'],
+        ];
+        return $this->patchData($postData, self::URL . "/" . $data['id']);
     }
 
     public function deleteFournisseur($id)
