@@ -2,7 +2,7 @@
 
 Pour éditer un marché publique, rendez vous dans les **réglages du services** depuis la barre de navigation (Outils d'administration -> Réglages du service).
 
-![Cliquez sur le bouton à gauche "Gestion des marchés publiques"](<../../.gitbook/assets/image (5) (1).png>)
+![Cliquez sur le bouton à gauche "Gestion des marchés publiques"](<../../.gitbook/assets/image (5) (1) (1).png>)
 
 Vous verrez alors les marchés que vous avez créé. Pour modifier un marché, cliquez sur le bouton "Modifier" sur la carte du marché a modifier
 

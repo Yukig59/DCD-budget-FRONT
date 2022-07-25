@@ -6,7 +6,7 @@ description: Tableau de bord de l'application
 
 Le dashboard de l'application vous permet un rapide coup d'oeil sur l'état de vos budgets.
 
-![Page Dashboard](<../../.gitbook/assets/image (13) (1) (1).png>)
+![Page Dashboard](<../../.gitbook/assets/image (13) (1) (1) (1).png>)
 
 Le dashboard est divisé en 3 parties:&#x20;
 

@@ -12,6 +12,6 @@ Pour afficher les détails d'une ligne, cliquez simplement sur le bouton "Detail
 
 L'application vous redirigera alors vers la page de visualisation d'une ligne de budget .
 
-![Page de visualisation d'une ligne de budget](<../../.gitbook/assets/image (13).png>)
+![Page de visualisation d'une ligne de budget](<../../.gitbook/assets/image (13) (1).png>)
 
 Vous y trouverez un graphique résumant l'état budgétaire de la ligne, son historique, ainsi que la liste des bons de commandes rattachés a cette ligne.

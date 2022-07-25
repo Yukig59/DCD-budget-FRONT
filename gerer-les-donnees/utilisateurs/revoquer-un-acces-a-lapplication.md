@@ -6,7 +6,7 @@ Si vous souhaitez supprimer un utilisateur de la liste d'accès de l'application
 
 Vous devriez voir apparaitre la liste des utilisateurs de votre service. Pour en supprimer un, cliquez sur le bouton "Révoquer l'acces à l'application"
 
-![Exemple d'utilisateur](<../../.gitbook/assets/image (15).png>)
+![Exemple d'utilisateur](<../../.gitbook/assets/image (15) (1).png>)
 
 {% hint style="warning" %}
 Attention ! Vous ne pouvez pas révoquer votre propre acces a l'application.

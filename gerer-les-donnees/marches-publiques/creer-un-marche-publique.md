@@ -2,7 +2,7 @@
 
 Pour créer un marché publique, rendez vous dans les **réglages du services** depuis la barre de navigation (Outils d'administration -> Réglages du service).
 
-![Cliquez sur le bouton à gauche "Gestion des marchés publiques"](<../../.gitbook/assets/image (5) (1).png>)
+![Cliquez sur le bouton à gauche "Gestion des marchés publiques"](<../../.gitbook/assets/image (5) (1) (1).png>)
 
 Cliquez sur le bouton "Gestion des marchés publiques". Sa couleur doit avoir changé, et un bouton est apparu en dessous : <img src="../../.gitbook/assets/image (10) (1).png" alt="" data-size="original">
 

@@ -4,7 +4,7 @@
 
 Pour créer un fournisseur, rendez vous dans les **réglages du services** depuis la barre de navigation (Outils d'administration -> Réglages du service).
 
-![Cliquez sur le bouton à droite "Gestion des fournisseurs"](<../../.gitbook/assets/image (13) (1).png>)
+![Cliquez sur le bouton à droite "Gestion des fournisseurs"](<../../.gitbook/assets/image (13) (1) (1).png>)
 
 Vous verrez alors les fournisseurs que vous avez créé. Pour en modifier un, cliquez sur le bouton "Modifier" sur la carte du fournisseur a modifier
 

@@ -12,6 +12,6 @@ Vous serez dirigé vers l'accueil des lignes de budget. Cliquez sur le bouton ![
 
 Pour effectuer un virement entre deux lignes, cliquez sur le bouton <img src="../../.gitbook/assets/image.png" alt="" data-size="line">. Une nouvelle fenêtre s'ouvre alors.&#x20;
 
-![Fenêtre de virement de crédits](<../../.gitbook/assets/image (6).png>)
+![Fenêtre de virement de crédits](<../../.gitbook/assets/image (6) (1).png>)
 
 Une fois les informations demandées entrées, cliquez sur "Enregistrer" pour sauvegarder les modifications. Vous serez ensuite redirigé vers la page d'accueil des lignes de budget, un message vous indiquant si l'opération a réussi ou non.
