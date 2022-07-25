@@ -20,6 +20,10 @@
 [faire-une-demande-de-credits-a-un-autre-service.md](faire-une-demande-de-credits-a-un-autre-service.md)
 {% endcontent-ref %}
 
+{% content-ref url="accepter-ou-refuser-une-demande-de-credits.md" %}
+[accepter-ou-refuser-une-demande-de-credits.md](accepter-ou-refuser-une-demande-de-credits.md)
+{% endcontent-ref %}
+
 {% content-ref url="supprimer-une-ligne-de-budget.md" %}
 [supprimer-une-ligne-de-budget.md](supprimer-une-ligne-de-budget.md)
 {% endcontent-ref %}
