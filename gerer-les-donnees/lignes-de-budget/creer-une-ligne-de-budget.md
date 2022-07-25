@@ -28,10 +28,10 @@ Depuis cette page, cliquez sur "Créer une ligne"&#x20;
 
 Peu importe la méthode choisie, la même fenêtre s'ouvrira :&#x20;
 
-![Fenêtre d'ajout d'une ligne de budget](<../../.gitbook/assets/image (14).png>)
+![Fenêtre d'ajout d'une ligne de budget](<../../.gitbook/assets/image (14) (1).png>)
 
 {% hint style="info" %}
-Le budget Réel correspond au montant réellement disponible sur la ligne. Lors de la création de la ligne, cette valeur est en général égale au budget prévisionnel, mais se mettra a jour au fur et à mesure que des bons de commandes seront ajoutés a la ligne
+Le budget Réel correspond au montant réellement disponible sur la ligne. Lors de la création de la ligne, cette valeur est généralement égale au budget prévisionnel, mais se mettra a jour au fur et à mesure que des bons de commandes seront ajoutés a la ligne
 {% endhint %}
 
-Une fois vos données entrées dans le formulaire, cliquez sur "Enregistrer" pour sauvegarder la ligne de budget. Vous serez ensuite redirigé vers la page d'accueil des lignes de budget.
+Une fois vos données entrées dans le formulaire, cliquez sur "Enregistrer" pour sauvegarder la ligne de budget. Vous serez ensuite redirigé vers la page d'accueil des lignes de budget, , un message vous indiquant si l'opération a réussi ou non.

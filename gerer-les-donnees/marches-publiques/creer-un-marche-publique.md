@@ -8,6 +8,6 @@ Cliquez sur le bouton "Gestion des marchés publiques". Sa couleur doit avoir ch
 
 Cliquez sur "Ajouter un marché publique". Une nouvelle fenêtre s'ouvre alors.
 
-![Fenêtre d'ajout d'un marché](<../../.gitbook/assets/image (4) (1).png>)
+![Fenêtre d'ajout d'un marché](<../../.gitbook/assets/image (4) (1) (1).png>)
 
 Remplissez les champs avec les données du marché que vous souhaitez ajouter, puis cliquez sur "Enregistrer". Vous serez alors redirigé vers les **réglages du services**, avec une notification indiquant si l'opération a réussi ou non.&#x20;

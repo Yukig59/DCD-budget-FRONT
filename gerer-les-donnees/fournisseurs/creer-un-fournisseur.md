@@ -4,7 +4,7 @@
 
 Pour créer un fournisseur, rendez vous dans les **réglages du services** depuis la barre de navigation (Outils d'administration -> Réglages du service).
 
-![Cliquez sur le bouton à droite "Gestion des fournisseurs"](<../../.gitbook/assets/image (13).png>)
+![Cliquez sur le bouton à droite "Gestion des fournisseurs"](<../../.gitbook/assets/image (13) (1).png>)
 
 Cliquez sur le bouton "Gestion des marchés publiques". Sa couleur doit avoir changé, et un bouton est apparu en dessous : ![](<../../.gitbook/assets/image (1).png>)
 
