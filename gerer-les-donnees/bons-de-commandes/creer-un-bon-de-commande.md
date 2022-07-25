@@ -12,7 +12,7 @@ Tout d'abord rendez vous sur le Dashboard de l'application (accessible via la ba
 
 Depuis le menu de gauche, cliquez sur "Ajouter une nouvelle ligne de budget" (cliquez sur l'image pour l'agrandir)
 
-<img src="../.gitbook/assets/image (10).png" alt="" data-size="original">
+<img src="../../.gitbook/assets/image (10).png" alt="" data-size="original">
 
 </details>
 
@@ -22,7 +22,7 @@ Depuis le menu de gauche, cliquez sur "Ajouter une nouvelle ligne de budget" (cl
 
 Tout d'abord rendez vous sur l'index des lignes de budget (accessible via la barre de navigation, en haut de la page, survolant le menu "Outils d'administration" puis en cliquant sur "Gérer les lignes de budget").
 
-Depuis cette page, cliquez sur <img src="../.gitbook/assets/image (6).png" alt="" data-size="line">
+Depuis cette page, cliquez sur <img src="../../.gitbook/assets/image (6).png" alt="" data-size="line">
 
 
 
@@ -30,9 +30,9 @@ Depuis cette page, cliquez sur <img src="../.gitbook/assets/image (6).png" alt="
 
 Peu importe la méthode utilisée, une nouvelle fenêtre s'affiche alors
 
-![Fenêtre de création d'un bon de commande 1/2](<../.gitbook/assets/image (4).png>)
+![Fenêtre de création d'un bon de commande 1/2](<../../.gitbook/assets/image (4).png>)
 
-![Fenêtre de création d'un bon de commande 2/2](<../.gitbook/assets/image (3).png>)
+![Fenêtre de création d'un bon de commande 2/2](<../../.gitbook/assets/image (3).png>)
 
 {% hint style="info" %}
 Le commentaire ainsi que la facture sont facultatifs, vous pouvez ne pas les renseigner.
