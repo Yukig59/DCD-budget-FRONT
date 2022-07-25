@@ -33,4 +33,5 @@
   * [Créer une ligne de budget](gerer-les-donnees/lignes-de-budget/creer-une-ligne-de-budget.md)
   * [Afficher les détails d'une ligne](gerer-les-donnees/lignes-de-budget/afficher-les-details-dune-ligne.md)
   * [Modifier les en-têtes d'une ligne de budget](gerer-les-donnees/lignes-de-budget/modifier-les-en-tetes-dune-ligne-de-budget.md)
+  * [Faire un virement de crédits interne](gerer-les-donnees/lignes-de-budget/faire-un-virement-de-credits-interne.md)
   * [Supprimer une ligne de budget](gerer-les-donnees/lignes-de-budget/supprimer-une-ligne-de-budget.md)
