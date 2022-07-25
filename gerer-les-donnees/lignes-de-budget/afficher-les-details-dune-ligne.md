@@ -8,7 +8,7 @@ Tout d'abord rendez vous sur l'index des lignes de budget (accessible via la bar
 
 Pour afficher les détails d'une ligne, cliquez simplement sur le bouton "Details" sur la ligne de budget a visualiser
 
-![Cliquez sur "Details"](<../../.gitbook/assets/image (4).png>)
+![Cliquez sur "Details"](<../../.gitbook/assets/image (4) (1).png>)
 
 L'application vous redirigera alors vers la page de visualisation d'une ligne de budget .
 

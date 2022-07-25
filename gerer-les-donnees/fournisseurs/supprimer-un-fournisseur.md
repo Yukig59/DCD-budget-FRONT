@@ -10,7 +10,7 @@ Pour supprimer un fournisseur , rendez vous dans les **réglages du services** d
 
 Vous verrez alors les fournisseurs que vous avez créé. Pour en supprimer un, cliquez sur le bouton "Supprimer" sur la carte du fournisseur a modifier
 
-![Un exemple de fournisseur](<../../.gitbook/assets/image (16) (1).png>)
+![Un exemple de fournisseur](<../../.gitbook/assets/image (16) (1) (1).png>)
 
 Une fenetre de confirmation apparaitra alors, demandant si vous souhaitez bien supprimer ce marché
 

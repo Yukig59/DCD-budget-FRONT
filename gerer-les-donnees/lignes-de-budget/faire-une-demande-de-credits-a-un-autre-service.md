@@ -4,9 +4,9 @@ Tout d'abord rendez vous sur l'index des lignes de budget (accessible via la bar
 
 ![Cliquez sur "Gérer les lignes de budget"](<../../.gitbook/assets/image (8).png>)
 
-Vous serez dirigé vers l'accueil des lignes de budget. Cliquez sur le bouton <img src="../../.gitbook/assets/image (16).png" alt="" data-size="line"> de la ligne que vous souhaitez mettre à jour.  Vous arriverez sur la page de visualisation d'une ligne de budget.
+Vous serez dirigé vers l'accueil des lignes de budget. Cliquez sur le bouton <img src="../../.gitbook/assets/image (16) (1).png" alt="" data-size="line"> de la ligne que vous souhaitez mettre à jour.  Vous arriverez sur la page de visualisation d'une ligne de budget.
 
-Pour faire une demande de crédits, cliquez sur le bouton <img src="../../.gitbook/assets/image (6).png" alt="" data-size="line">. Une nouvelle fenêtre s'ouvre alors.&#x20;
+Pour faire une demande de crédits, cliquez sur le bouton <img src="../../.gitbook/assets/image (6) (1).png" alt="" data-size="line">. Une nouvelle fenêtre s'ouvre alors.&#x20;
 
 ![Fenêtre de demande de crédits](<../../.gitbook/assets/image (5).png>)
 

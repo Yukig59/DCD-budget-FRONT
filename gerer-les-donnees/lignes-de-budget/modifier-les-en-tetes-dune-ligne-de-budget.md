@@ -12,7 +12,7 @@ Tout d'abord rendez vous sur l'index des lignes de budget (accessible via la bar
 
 ![Cliquez sur "Gérer les lignes de budget"](<../../.gitbook/assets/image (8).png>)
 
-Vous serez dirigé vers l'accueil des lignes de budget. Cliquez sur le bouton ![](<../../.gitbook/assets/image (16).png>) de la ligne que vous souhaitez mettre à jour.  Vous arriverez sur la page de visualisation d'un bon de commande. Pour modifier les en-têtes de la ligne, cliquez simplement sur&#x20;
+Vous serez dirigé vers l'accueil des lignes de budget. Cliquez sur le bouton ![](<../../.gitbook/assets/image (16) (1).png>) de la ligne que vous souhaitez mettre à jour.  Vous arriverez sur la page de visualisation d'un bon de commande. Pour modifier les en-têtes de la ligne, cliquez simplement sur&#x20;
 
 ![Cliquez sur ce bouton pour mettre a jour une ligne de budget](<../../.gitbook/assets/image (14).png>)
 

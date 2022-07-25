@@ -6,7 +6,7 @@ Si vous avez reçu une demande de virement de crédits, une notification apparai
 
 Pour refuser une demande de crédits, cliquez sur ![](<../../.gitbook/assets/image (19).png>).
 
-Pour accepter une demande de crédits, cliquez sur ![](<../../.gitbook/assets/image (3).png>). Une nouvelle fenêtre apparait alors.
+Pour accepter une demande de crédits, cliquez sur ![](<../../.gitbook/assets/image (3) (1).png>). Une nouvelle fenêtre apparait alors.
 
 ![Fenêtre de confirmation de virement](<../../.gitbook/assets/image (18).png>)
 
