@@ -35,8 +35,5 @@
   * [Modifier les en-têtes d'une ligne de budget](gerer-les-donnees/lignes-de-budget/modifier-les-en-tetes-dune-ligne-de-budget.md)
   * [Faire un virement de crédits interne](gerer-les-donnees/lignes-de-budget/faire-un-virement-de-credits-interne.md)
   * [Faire une demande de crédits à un autre service](gerer-les-donnees/lignes-de-budget/faire-une-demande-de-credits-a-un-autre-service.md)
+  * [Accepter ou refuser une demande de crédits](gerer-les-donnees/lignes-de-budget/accepter-ou-refuser-une-demande-de-credits.md)
   * [Supprimer une ligne de budget](gerer-les-donnees/lignes-de-budget/supprimer-une-ligne-de-budget.md)
-
-***
-
-* [Accepter ou refuser une demande de crédits](accepter-ou-refuser-une-demande-de-credits.md)

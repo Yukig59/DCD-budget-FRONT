@@ -13,6 +13,6 @@ Pour faire une demande de crédits, cliquez sur le bouton <img src="../../.gitbo
 Selectionnez la ligne de budget à créditer, l'utilisateur à qui demander les crédits et le montant de la demande. Pour envoyer votre demande, cliquez sur "Enregistrer".
 
 {% hint style="danger" %}
-
+Chaque utilisateur ne peut reçevoir qu'une seule demande à la fois, veillez donc bien à prévenir l'utilisateur que vous souhaitez faire un virement de crédit. Veillez aussi a répondre a une demande au plus vite si vous en recevez une.
 {% endhint %}
 
