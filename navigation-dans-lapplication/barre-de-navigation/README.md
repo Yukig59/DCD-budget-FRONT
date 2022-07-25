@@ -2,7 +2,7 @@
 
 La barre de navigation est affichée sur toutes les pages de l'application et permet d'y naviguer aisément. Elle se présente comme suit:
 
-![Barre de navigation](<../../.gitbook/assets/image (11).png>)
+![Barre de navigation](<../../.gitbook/assets/image (11) (1).png>)
 
 Elle permet de se rendre sur les différentes pages de l'application :
 

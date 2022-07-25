@@ -2,7 +2,7 @@
 
 Pour supprimer un marché publique, rendez vous dans les **réglages du services** depuis la barre de navigation (Outils d'administration -> Réglages du service).
 
-![Cliquez sur le bouton à gauche "Gestion des marchés publiques"](<../../.gitbook/assets/image (5).png>)
+![Cliquez sur le bouton à gauche "Gestion des marchés publiques"](<../../.gitbook/assets/image (5) (1).png>)
 
 Vous verrez alors les marchés que vous avez créé. Pour supprimer un marché, cliquez sur le bouton "Supprimer" sur la carte du marché que vous souhaitez retirer.
 
@@ -16,4 +16,4 @@ Une fenetre de confirmation apparaitra alors, demandant si vous souhaitez bien s
 
 ![Alerte de suppression](<../../.gitbook/assets/image (8).png>)
 
-Une fois la suppression effectuée, l'application vous redirigera vers la page d'accueil **réglages du services**
+Une fois la suppression effectuée vous serez redirigé vers les **réglages du services**, avec une notification indiquand si l'opération a réussi ou non.&#x20;
