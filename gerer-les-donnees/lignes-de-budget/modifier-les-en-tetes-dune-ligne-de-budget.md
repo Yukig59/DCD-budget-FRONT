@@ -18,6 +18,6 @@ Vous serez dirigé vers l'accueil des lignes de budget. Cliquez sur le bouton ![
 
 Une nouvelle fenêtre apparait alors. les champs du formulaire sont pré-remplis avec les valeurs actuelles de la ligne.
 
-![Fenêtre de modification des en-têtes de la ligne](<../../.gitbook/assets/image (2).png>)
+![Fenêtre de modification des en-têtes de la ligne](<../../.gitbook/assets/image (2) (1).png>)
 
 Une fois vos données saisies dans le formulaire, cliquez sur "Enregistrer" pour sauvegarder les modifications effectuées. Vous serez ensuite redirigé vers la page d'accueil des lignes de budget, un message vous indiquant si l'opération a réussi ou non.

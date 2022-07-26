@@ -8,6 +8,6 @@ Supprimer une ligne de budget supprimera tous les bons de commandes qui y sont r
 
 Choisissez la ligne a supprimer, puis cliquez sur "Supprimer"
 
-![](<../../.gitbook/assets/image (4) (1).png>)
+![](<../../.gitbook/assets/image (4) (1) (1).png>)
 
 Vous serez ensuite redirigé vers la page d'accueil des lignes de budget, un message vous indiquant si l'opération a réussi ou non.
