@@ -228,7 +228,7 @@ use CodeIgniter\I18n\Time;
                     </div>
                     <footer class="card-footer">
                         <a href="<?= base_url('/purchase-order/edit/' . $po->id) ?>"
-                           class="card-footer-item modal-js-edit"><i class="fa fa-info-circle"></i>&nbsp;
+                           class="card-footer-item modal-js-edit"><i class="fa fa-edit"></i>&nbsp;
                             Modifier</a>
                         <a href="<?= base_url('purchase-order/delete/' . $po->id) ?>"
                            onclick="return confirm('Vous êtes sur le point de supprimer ce bon de commande. Êtes-vous sur ?')"

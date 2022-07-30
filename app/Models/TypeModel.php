@@ -4,7 +4,7 @@ namespace App\Models;
 
 class TypeModel extends AbstractModel
 {
-    const URL = "https://localhost:8000/api/types";
+    const URL = "https://localhost:8001/api/types";
 
     public function getTypeByLabel($label)
     {

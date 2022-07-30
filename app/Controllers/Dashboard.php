@@ -52,6 +52,7 @@ class Dashboard extends BaseController
 
     public function powerBi()
     {
+        helper('iri');
         $service = new ServiceModel();
         $po = new PurchaseOrderModel();
         $bh = new BudgetHeaderModel();
@@ -68,17 +69,17 @@ class Dashboard extends BaseController
             "types" => $type->getAllTypes(),
             "users" => $user->getAllUsers()
         ];
-        return $this->response->setStatusCode(200)->setJSON($data);
+        return view('powerbi', $data);
     }
 
     public function deleteNotification($userId)
     {
-        $url = "https://localhost:8000/api/users/" . $userId;
+        $url = "https://localhost:8001/api/users/" . $userId;
         $patchData = [
             "notifications" => []
         ];
         $user = new UserModel();
-     
+
         if ($user->patchData($patchData, $url)->id) {
             return redirect()->to('/dashboard')->with('message', 'Demande refusée !');
         } else

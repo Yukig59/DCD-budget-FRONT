@@ -148,7 +148,6 @@ use CodeIgniter\I18n\Time;
                             <a href="<?= base_url("budget-header/" . $bh->id) ?>"
                                class="card-footer-item"><i class="fa fa-info-circle"></i>&nbsp;
                                 Détails</a>
-                            <a href="#" class="card-footer-item"><i class="fa fa-pie-chart"></i>&nbsp; Stats</a>
                             <a href="<?= base_url('/budget-header/delete/' . $bh->id) ?>"
                                onclick="return confirm('Vous êtes sur le point de supprimer cette ligne de budget. Êtes-vous sur ?')"
                                class="card-footer-item"><i

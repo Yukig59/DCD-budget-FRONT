@@ -4,7 +4,7 @@ namespace App\Models;
 
 class PurchaseOrderModel extends AbstractModel
 {
-    const URL = "https://localhost:8000/api/purchase_orders";
+    const URL = "https://localhost:8001/api/purchase_orders";
 
     public function getAllPurchaseOrdersByService($code)
     {
@@ -55,7 +55,7 @@ class PurchaseOrderModel extends AbstractModel
             "purchaseOrder" => "/api/purchase_orders/" . $result->id,
             "service" => "/api/services/" . $data['service'],
         ];
-        $this->sendData($poLog, "https://localhost:8000/api/logs");
+        $this->sendData($poLog, "https://localhost:8001/api/logs");
         $newBhData = [
             "montant" => $result->montant,
             "bhId" => $data['bhId'],
@@ -89,7 +89,7 @@ class PurchaseOrderModel extends AbstractModel
                 "budgetReel" => $bh->budgetReel + $data['PO']->montant,
                 "depenses" => $bh->budgetReel - $data['PO']->montant
             ];
-            return $this->patchData($newBhData, 'https://localhost:8000/api/budget_headers/' . $newBhData['id']);
+            return $this->patchData($newBhData, 'https://localhost:8001/api/budget_headers/' . $newBhData['id']);
         } else {
             return false;
         }

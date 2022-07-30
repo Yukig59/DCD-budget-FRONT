@@ -35,7 +35,7 @@ class UserModel extends AbstractModel
 
     public function getUserById($id)
     {
-        $items = $this->requestData(self::URL . "?id=" . $id);
+        $items = $this->requestData(self::URL . "/" . $id);
         return $items ?? FALSE;
     }
 

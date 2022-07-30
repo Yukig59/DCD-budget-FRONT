@@ -7,7 +7,7 @@ use function PHPUnit\Framework\returnArgument;
 
 class HistoryModel extends AbstractModel
 {
-    const URL = "https://localhost:8000/api/logs";
+    const URL = "https://localhost:8001/api/logs";
 
     public function createHistory($data)
     {
@@ -30,7 +30,7 @@ class HistoryModel extends AbstractModel
 
     public function getBhLogsById($id)
     {
-        $url = "https://localhost:8000/api/budget_headers/" . $id . "/logs";
+        $url = "https://localhost:8001/api/budget_headers/" . $id . "/logs";
         return $this->requestData($url);
     }
 

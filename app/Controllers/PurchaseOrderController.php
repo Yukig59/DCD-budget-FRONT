@@ -13,7 +13,7 @@ class PurchaseOrderController extends BaseController
     public function index()
     {
         helper('number');
-
+        var_dump(session()->service);
         $session = session();
         if ($session->getFlashdata('message') !== null) {
             $data['message'] = $session->getFlashdata('message');

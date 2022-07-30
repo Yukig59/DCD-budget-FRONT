@@ -6,7 +6,7 @@ use Cassandra\Date;
 
 class MarketModel extends AbstractModel
 {
-    const URL = "https://localhost:8000/api/marches";
+    const URL = "https://localhost:8001/api/marches";
 
     public function getMarketsByService($code)
     {

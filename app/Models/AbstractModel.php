@@ -107,7 +107,7 @@ abstract class AbstractModel
 
     public function getItemFromIri($iri)
     {
-        $url = "https://localhost:8000" . $iri;
+        $url = "https://localhost:8001" . $iri;
         return $this->requestData($url);
     }
 }
