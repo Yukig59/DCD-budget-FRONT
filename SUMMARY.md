@@ -40,5 +40,4 @@
 * [Bons de commandes](gerer-les-donnees/bons-de-commandes/README.md)
   * [Créer un bon de commande](gerer-les-donnees/bons-de-commandes/creer-un-bon-de-commande.md)
   * [Modifier un bon de commande](gerer-les-donnees/bons-de-commandes/modifier-un-bon-de-commande.md)
-  * [Afficher un bon de commande](gerer-les-donnees/bons-de-commandes/afficher-un-bon-de-commande.md)
   * [Supprimer un bon de commande](gerer-les-donnees/bons-de-commandes/supprimer-un-bon-de-commande.md)

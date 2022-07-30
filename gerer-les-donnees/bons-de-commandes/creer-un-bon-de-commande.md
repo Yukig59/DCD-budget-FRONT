@@ -30,9 +30,9 @@ Depuis cette page, cliquez sur <img src="../../.gitbook/assets/image (6).png" al
 
 Peu importe la méthode utilisée, une nouvelle fenêtre s'affiche alors
 
-![Fenêtre de création d'un bon de commande 1/2](<../../.gitbook/assets/image (4).png>)
+![Fenêtre de création d'un bon de commande 1/2](<../../.gitbook/assets/image (4) (1).png>)
 
-![Fenêtre de création d'un bon de commande 2/2](<../../.gitbook/assets/image (3).png>)
+![Fenêtre de création d'un bon de commande 2/2](<../../.gitbook/assets/image (3) (1).png>)
 
 {% hint style="info" %}
 Le commentaire ainsi que la facture sont facultatifs, vous pouvez ne pas les renseigner.
